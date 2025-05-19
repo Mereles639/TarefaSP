@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cebolitos - Automatizador de Tarefas</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="src/style.css">
+</head>
+<body>
+    <div class="container">
+        <section id="centralizar">
+            <div id="form">
+                <div class="logo">
+                    <i class="fas fa-robot"></i>
+                    <h1>Cebolitos</h1>
+                </div>
+                
+                <form id="Enviar">
+                    <div class="input-group">
+                        <i class="fas fa-id-card"></i>
+                        <input type="text" id="ra" placeholder="Ex: 00011198235xSP" required>
+                    </div>
+
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <div class="Mostrar">
+                            <input type="password" id="senha" placeholder="Senha" required>
+                            <button type="button" id="VerSenha"><i class="fas fa-eye"></i></button>
+                        </div>
+                    </div>
+                    
+                    <div class="task-selection">
+                        <h3>Selecione as tarefas:</h3>
+                        <div class="task-options">
+                            <label class="task-option">
+                                <input type="checkbox" name="tasks" value="rascunho" checked>
+                                <span>Rascunhos</span>
+                            </label>
+                            <label class="task-option">
+                                <input type="checkbox" name="tasks" value="expirada" checked>
+                                <span>Expiradas</span>
+                            </label>
+                            <label class="task-option">
+                                <input type="checkbox" name="tasks" value="normal" checked>
+                                <span>Normais</span>
+                            </label>
+                            <label class="task-option">
+                                <input type="checkbox" name="tasks" value="redacao">
+                                <span>Redações</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="time-selection">
+                        <h3>Tempo por atividade (10-20 min):</h3>
+                        <div class="time-options">
+                            <button type="button" class="time-btn" data-time="10">10</button>
+                            <button type="button" class="time-btn" data-time="12">12</button>
+                            <button type="button" class="time-btn active" data-time="15">15</button>
+                            <button type="button" class="time-btn" data-time="18">18</button>
+                            <button type="button" class="time-btn" data-time="20">20</button>
+                        </div>
+                        <div class="time-custom">
+                            <input type="number" id="custom-time" min="10" max="20" placeholder="Ou digite (10-20)">
+                        </div>
+                    </div>
+                    
+                    <button id="Logar" type="submit">
+                        <i class="fas fa-play"></i> Iniciar Tarefas
+                    </button>  
+                </form>
+            </div>    
+            
+            <article id="TamanhoN"></article>
+        </section>
+    </div>
+    
+    <div id="status-bar">
+        <div class="status-content">
+            <span id="status-message">Pronto para começar</span>
+            <div class="progress-container">
+                <div id="progress-bar"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="src/script.js"></script>
+    <script src="src/modal.js"></script>
+</body>
+</html>
